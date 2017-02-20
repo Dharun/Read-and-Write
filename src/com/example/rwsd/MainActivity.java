@@ -47,17 +47,11 @@ public class MainActivity extends Activity {
 				  
                 try {  
                 	File sdcard = Environment.getExternalStorageDirectory();
-                	// to this path add a new directory path
                 	File dir = new File(sdcard.getAbsolutePath() + "/sd/");
-                	// create this directory if not already created
                 	dir.mkdir();
-                	// create the file in which we will write the contents
                 	File file = new File(dir, "My-File-Name.txt");
                 	FileOutputStream fout= new FileOutputStream(file);
-                	
-                	
-                	
-                	
+          
                     // File myFile = new File("/sdcard/"+filename);  
                    //  myFile.createNewFile();  
                    //  FileOutputStream fout = new FileOutputStream(myFile);  
@@ -87,11 +81,8 @@ public class MainActivity extends Activity {
                 String aBuffer = "";  
                 try {  
                 	File sdcard = Environment.getExternalStorageDirectory();
-                	// to this path add a new directory path
                 	File dir = new File(sdcard.getAbsolutePath() + "/sd/");
-                	// create this directory if not already created
                 	dir.mkdir();
-                	// create the file in which we will write the contents
                 	File file = new File(dir, "My-File-Name.txt");  
                     FileInputStream fIn = new FileInputStream(file);  
                     BufferedReader myReader = new BufferedReader(new InputStreamReader(fIn));  

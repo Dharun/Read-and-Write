@@ -46,9 +46,21 @@ public class MainActivity extends Activity {
 				
 				  
                 try {  
-                     File myFile = new File"/sdcard/"+filename);  
-                     myFile.createNewFile();  
-                     FileOutputStream fout = new FileOutputStream(myFile);  
+                	File sdcard = Environment.getExternalStorageDirectory();
+                	// to this path add a new directory path
+                	File dir = new File(sdcard.getAbsolutePath() + "/sd/");
+                	// create this directory if not already created
+                	dir.mkdir();
+                	// create the file in which we will write the contents
+                	File file = new File(dir, "My-File-Name.txt");
+                	FileOutputStream fout= new FileOutputStream(file);
+                	
+                	
+                	
+                	
+                    // File myFile = new File("/sdcard/"+filename);  
+                   //  myFile.createNewFile();  
+                   //  FileOutputStream fout = new FileOutputStream(myFile);  
                      OutputStreamWriter myOutWriter = new OutputStreamWriter(fout);  
                      myOutWriter.append(data);  
                      myOutWriter.close();  
@@ -74,8 +86,14 @@ public class MainActivity extends Activity {
                 String aDataRow = "";  
                 String aBuffer = "";  
                 try {  
-                    File myFile = new File("/sdcard/"+filename);  
-                    FileInputStream fIn = new FileInputStream(myFile);  
+                	File sdcard = Environment.getExternalStorageDirectory();
+                	// to this path add a new directory path
+                	File dir = new File(sdcard.getAbsolutePath() + "/sd/");
+                	// create this directory if not already created
+                	dir.mkdir();
+                	// create the file in which we will write the contents
+                	File file = new File(dir, "My-File-Name.txt");  
+                    FileInputStream fIn = new FileInputStream(file);  
                     BufferedReader myReader = new BufferedReader(new InputStreamReader(fIn));  
                     while ((aDataRow = myReader.readLine()) != null){  
                         aBuffer += aDataRow + "\n";  
